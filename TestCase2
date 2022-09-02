@@ -1,0 +1,28 @@
+package (default package);
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Webdriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TestCase2{
+	
+	public void test2(){
+		
+		System.setProperty("webdriver.chrome.driver","C:/chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.navigate().to("https://www.otto.de/p/sony-bdp-s1700-blu-ray-player-full-hd-527709514/#variationId=527711122");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+
+		  if (driver.findElements(By.xpath("//h2[@class='pdp_details-short-info__title pl_headline200']")).size() != 0 )
+		    {
+		   System.out.println("Element is present on WebPage");
+		  }
+		  else {
+		   System.out.println("Element is not present on webpage");
+		 }
+
+		}
+}
