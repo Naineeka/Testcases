@@ -25,10 +25,10 @@ public class TestCase1{
 
 		  if (driver.findElements(By.class("pdp_details-short-info__title pl_headline200")).size() != 0 )
 		    {
-		   System.out.println("Element is present on WebPage");
+		   System.out.println("Artikelbeschreibung ist vorhanden");
 		  }
 		  else {
-		   System.out.println("Element is not present on webpage");
+		   System.out.println("Artikelbeschreibung ist nicht vorhanden");
 		 }
 
 		}
