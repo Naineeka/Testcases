@@ -12,16 +12,26 @@ public class TestCase2{
 		
 		System.setProperty("webdriver.chrome.driver","C:/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		driver.navigate().to("https://www.otto.de/p/sony-bdp-s1700-blu-ray-player-full-hd-527709514/#variationId=527711122");
+		driver.get().to("https://www.otto.de/");
+		
+		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
+		
+		WebElement Option = driver.findElement(By.data-nav-down-link("/nav-chekov/menu-fragment/(und.(ist.sortiment.buerotechnik.kommunikation.medien.navigation.optik.technik-zubehoer.unterhaltungselektronik).(~.(v.1)))/?embeddingDepth=0"));
+		Option.click();
+		WebElement search = driver.findElement(By.data-title("Blu-ray-Player"));
+		search.click();
+		WebElement product = driver.findElement(By.data-qa("ftfind-product-1"));
+		product.click();
+				
 
-		  if (driver.findElements(By.xpath("//h2[@class='pdp_details-short-info__title pl_headline200']")).size() != 0 )
+		  if (driver.findElements(By.class("pdp_details-short-info__title pl_headline200")).size() != 0 )
 		    {
-		   System.out.println("Element is present on WebPage");
+		   System.out.println("Artikelbeschreibung ist vorhanden");
 		  }
 		  else {
-		   System.out.println("Element is not present on webpage");
+		   System.out.println("Artikelbeschreibung ist nicht vorhanden");
 		 }
 
 		}
